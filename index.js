@@ -10,14 +10,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //С помощью цикла forEach пройдемся по элементу с паролем и повесим обработчик событий 
 //addEventListener, который отловит клик на чекбоак Показать пароль и сработает функция
 showPassword.forEach(item => item.addEventListener('click', function (event) {
-    //Метод closest() возвращает ближайший родительский элемент с классом inputs, внутри 
-    //которого несколько полей, которые будут работать независимо друг от друга. 
-    //Вся эта конструкция, начиная с ключевого слова this отправляется в переменную input.
     let input = this.closest('.inputs').querySelector('.password');
-    //Если текущий тип поля password (чекбокс отмечен), то поменять его на текстовый тип. 
     if (input.type === 'password') {
-        input.type = 'text';
-    //В противном случае оставить, как есть.    
+        input.type = 'text';   
     } else {
         input.type = 'password';
     }
